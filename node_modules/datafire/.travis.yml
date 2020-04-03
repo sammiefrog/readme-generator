@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "6"
+  - "10"
+script:
+  - npm link
+  - npm link datafire
+  - npm run build
+  - mocha ./src/test --recursive
+notifications:
+ email:
+    recipients:
+      - bobby@datafire.io
+    on_success: change
+    on_failure: always
+

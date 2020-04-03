@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+var version = require('../src/util/node-version.js');
+if (version > 6) {
+  module.exports = require('../src/cmd');
+} else {
+  module.exports = require('../distribution/src/cmd');
+}

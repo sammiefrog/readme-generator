@@ -1,0 +1,480 @@
+{
+  "swagger": "2.0",
+  "schemes": [
+    "http"
+  ],
+  "host": "localhost:3333",
+  "info": {
+    "title": "",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/ping": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid request",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-datafire": {
+          "action": "anonymous"
+        }
+      }
+    },
+    "/statusCode": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "statusCode",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid request",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-datafire": {
+          "action": "anonymous"
+        }
+      }
+    },
+    "/throw": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "message",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid request",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-datafire": {
+          "action": "anonymous"
+        }
+      }
+    },
+    "/hello": {
+      "get": {
+        "parameters": [
+          {
+            "name": "name",
+            "type": "string",
+            "in": "query",
+            "required": true,
+            "maxLength": 10
+          },
+          {
+            "name": "uppercase",
+            "type": "boolean",
+            "in": "query",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid request",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-datafire": {
+          "action": "anonymous"
+        }
+      }
+    },
+    "/hello_world": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid request",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-datafire": {
+          "action": "anonymous"
+        }
+      }
+    },
+    "/respond": {
+      "get": {
+        "parameters": [
+          {
+            "name": "statusCode",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "message",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid request",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-datafire": {
+          "action": "anonymous"
+        }
+      }
+    },
+    "/player/{id}": {
+      "post": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "insert",
+            "type": "boolean"
+          },
+          {
+            "in": "path",
+            "required": true,
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "aliases": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid request",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-datafire": {
+          "action": "anonymous"
+        },
+        "consumes": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ]
+      }
+    },
+    "/files": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid request",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-datafire": {
+          "action": "anonymous"
+        }
+      }
+    },
+    "/files/{_extendedPathPart0}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "name": "_extendedPathPart0",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid request",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-datafire": {
+          "action": "anonymous"
+        }
+      }
+    },
+    "/directory/{filename}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "name": "filename",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid request",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-datafire": {
+          "action": "anonymous"
+        }
+      }
+    },
+    "/directory/{filename}/{_extendedPathPart0}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "name": "filename",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "required": true,
+            "name": "_extendedPathPart0",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid request",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-datafire": {
+          "action": "anonymous"
+        }
+      }
+    }
+  }
+}

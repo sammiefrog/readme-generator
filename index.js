@@ -1,7 +1,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const axios = require('axios');
-const primeng = require('primeng');
+// const primeng = require('primeng');
 
 function inquireQuestions () {
     inquirer
@@ -33,12 +33,12 @@ function inquireQuestions () {
 
 function githubAPICall () {
 
-    const queryUrl = `https://api.github.com/users/${username}/repos?per_page=100`;
-
+    const queryUrl = `https://api.github.com/zen`;
+    // ${username}/repos?per_page=100
     axios
       .get(queryUrl)
       .then(function(res) {
-        console.log(res);
+        console.log(res.data);
         
     
 
@@ -50,6 +50,7 @@ function githubAPICall () {
 
     //end function
 }
+githubAPICall();
 
         // fs.writeFile("repos.txt", JSON.stringify(repos), + '/n', function(err) {
     

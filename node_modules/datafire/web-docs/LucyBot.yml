@@ -1,0 +1,46 @@
+favicon: assets/logo-no-text.png
+
+routes:
+  /:
+    ui: documentation
+    title: DataFire
+    navigation:
+      - title: Introduction
+        markdownFile: ../README.md
+        markdownSection:
+          - DataFire
+          - Installation
+          - Sample Projects
+        noSubsections: true
+        expand: true
+        children:
+          - markdownFile: markdown/Basic Concepts.md
+            title: Basic Concepts
+          - markdownFile: markdown/Hello World.md
+            title: Hello World
+      - markdownFile: markdown/DataFire_yml.md
+        title: DataFire.yml Configuration
+      - markdownFile: markdown/Integrations.md
+      - markdownFile: markdown/Actions.md
+      - markdownFile: markdown/Triggers.md
+      - markdownFile: markdown/Authentication.md
+      - markdownFile: markdown/CLI.md
+        title: Command-line Interface
+      - title: Cookbook
+        autoselect: true
+        children:
+          - markdownFile: markdown/Cookbook.md
+            markdownSection: Server Options
+          - markdownFile: markdown/Cookbook.md
+            markdownSection: HTTP Requests
+          - markdownFile: markdown/Cookbook.md
+            markdownSection: NodeJS Express
+          - markdownFile: markdown/Cookbook.md
+            markdownSection: Custom Routing and Other Frameworks
+          - markdownFile: markdown/Cookbook.md
+            markdownSection: Open API
+          - markdownFile: markdown/Cookbook.md
+            markdownSection: Pagination
+          - markdownFile: markdown/Cookbook.md
+            markdownSection: Testing
+
