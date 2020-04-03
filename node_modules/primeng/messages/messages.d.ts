@@ -1,0 +1,29 @@
+import { OnInit, OnDestroy, EventEmitter, ElementRef } from '@angular/core';
+import { Message } from 'primeng/api';
+import { MessageService } from 'primeng/api';
+import { Subscription } from 'rxjs';
+export declare class Messages implements OnInit, OnDestroy {
+    messageService: MessageService;
+    el: ElementRef;
+    value: Message[];
+    closable: boolean;
+    style: any;
+    styleClass: string;
+    enableService: boolean;
+    key: string;
+    escape: boolean;
+    showTransitionOptions: string;
+    hideTransitionOptions: string;
+    valueChange: EventEmitter<Message[]>;
+    messageSubscription: Subscription;
+    clearSubscription: Subscription;
+    constructor(messageService: MessageService, el: ElementRef);
+    ngOnInit(): void;
+    hasMessages(): boolean;
+    getSeverityClass(): string;
+    clear(event: any): void;
+    readonly icon: string;
+    ngOnDestroy(): void;
+}
+export declare class MessagesModule {
+}
