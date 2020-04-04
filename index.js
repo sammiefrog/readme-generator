@@ -4,7 +4,7 @@ const axios = require('axios');
 const datafire = require('datafire');
 
 function inquireQuestions () {
-    inquirer
+  inquirer
   .prompt([
     {
       type: "input",
@@ -62,72 +62,67 @@ function inquireQuestions () {
   .then(function(response) {
 
     // console.log(response);
+    let userName = response.username;
 
-      const usersInfo = `
-          # ${response.project}
-    
-          ## Description
-          ${response.description}
-    
-          ## Technology Stack
-          ${response.technology}
-    
-          ## Contributors
-          ${response.contributors}
-    
-          ## Contact
-          * #### Name: ${response.name}(@${response.username})
-          * #### Portfolio: ${response.portfolio}
-          * #### Email: []()
-          * #### LinkedIn: www.linkedin.com/in/${response.linkedin}
-    
-          ## License
-          ${response.license}
-        `
-      fs.writeFile("README.md", usersInfo, function(err) {
-        
-        if (err) {
-          return console.log(err);
-        }
-      
-        console.log("Success!");
-      
-      });
+    githubAPICall(userName, response);
  
   });
   //end function
 }
 
+function githubAPICall (userName, response) {
 
+  console.log(userName);
+  const queryUrl = `https://api.github.com/users/` + userName;
 
-function githubAPICall () {
-
-    const queryUrl = `https://api.github.com/zen`;
-    // ${username}/repos?per_page=100
-    axios
+  axios
       .get(queryUrl)
-      .then(function(res) {
-        console.log(res.data);
-        
-    
+      .then(function (res) {
+          console.log(res.data);
 
-      }).catch(function(err){
 
-        console.log(err);
+          generateMD(response, res);
+      }).catch(function (err) {
+
+          console.log(err);
 
       });
 
+
     //end function
 }
+
+function generateMD(response, res) {
+  const usersInfo = `
+  # ${response.project}
+
+  ## Description
+  ${response.description}
+
+  ## Technology Stack
+  ${response.technology}
+
+  ## Contributors
+  ${response.contributors}
+
+  ## Contact
+  * #### Name: ${response.name}(@${response.username})
+  * #### Portfolio: ${response.portfolio}
+  * #### Email: []()
+  * #### LinkedIn: www.linkedin.com/in/${response.linkedin}
+
+  ## License
+  ${response.license}
+`
+    fs.writeFile("README.md", usersInfo, function(err) {
+        
+      if (err) {
+        return console.log(err);
+      }
+
+      console.log("Success!");
+    });
+}
+
 // githubAPICall();
 inquireQuestions();
-
-
-            // fs.writeFile('log.txt', JSON.stringify(response), function(err) {
-    //     if (err) {
-    //         console.log('error');
-    //     }
-    //     else{
-    //         console.log('success');
-    //     }
-    // })   
