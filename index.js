@@ -1,7 +1,8 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const axios = require('axios');
-const datafire = require('datafire');
+// const dotEnv = require('dotEnv');
+require('dotenv').config();
 
 function inquireQuestions () {
   inquirer
@@ -72,55 +73,66 @@ function inquireQuestions () {
 
 function githubAPICall (userName, response) {
 
-  console.log(userName);
-  const queryUrl = `https://api.github.com/users/` + userName;
+  const queryURL = `https://api.github.com/users/` + userName;
 
   axios
-      .get(queryUrl)
+      .get(queryURL, {
+        headers: {'Authorization': `token ${process.env.GH_TOKEN}`} 
+      })
       .then(function (res) {
           console.log(res.data);
-
-
-          generateMD(response, res);
-      }).catch(function (err) {
-
-          console.log(err);
-
-      });
-
-
-    //end function
-}
-
-function generateMD(response, res) {
-  const usersInfo = `
-  # ${response.project}
-
-  ## Description
-  ${response.description}
-
-  ## Technology Stack
-  ${response.technology}
-
-  ## Contributors
-  ${response.contributors}
-
-  ## Contact
-  * #### Name: ${response.name}(@${response.username})
-  * #### Portfolio: ${response.portfolio}
-  * #### Email: []()
-  * #### LinkedIn: www.linkedin.com/in/${response.linkedin}
-
-  ## License
-  ${response.license}
-`
-    fs.writeFile("README.md", usersInfo, function(err) {
         
+          generateMD(res, response);
+
+          // generateMD(response, res);
+      }).catch(err => console.log(err));
+
+
+}
+              //end function
+// }
+
+function generateMD(res, response) {
+  const usersInfo = `
+  <img src="${res.data.avatar_url}">
+  
+        # ${response.project}
+  
+        ## Description
+        ${response.description}
+        ## Table of Contents
+        ${response.table}
+        ## Installation
+        ${response.installation}
+  
+        ## Technology Stack
+        ${response.technology}
+        ## Usage
+        ${response.usage}
+  
+        ## Contributors
+        ${response.contributors}
+  
+        ## Contact
+        * #### Name: ${res.data.name}
+        * #### Github [${response.username}](${res.data.html_url})
+        * #### Portfolio: [link to portfolio](${response.portfolio})
+        * #### Email: []()
+        * #### LinkedIn: www.linkedin.com/in/${response.linkedin}
+  
+        ## License
+        ${response.license}
+        ## Tests
+        ${response.tests}
+      `
+    fs.writeFile("README.md", usersInfo, function (err) {
+
       if (err) {
-        return console.log(err);
+          return console.log(err);
       }
 
       console.log("Success!");
+
     });
 }
 
