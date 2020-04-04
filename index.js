@@ -38,6 +38,11 @@ function inquireQuestions () {
       name: "description"
     },
     {
+      type: "input",
+      message: "Enter Installation requirements:",
+      name: "installation"
+    },
+    {
       type: "checkbox",
       message: "What technologies did you use?",
       choices: ["Node.Js", "Express", "JavaScript", "jQuery", "React.js", "React", "GIT", "GitHub", "MongoDB", "MySQL", "Firebase", "Handlebars", "HTML", "CSS", "Bootstrap", "Media Queries", "APIs", "Microsoft Suite", "Heroku", "Command- Line"],
@@ -62,7 +67,6 @@ function inquireQuestions () {
   ])
   .then(function(response) {
 
-    // console.log(response);
     let userName = response.username;
 
     githubAPICall(userName, response);
@@ -89,42 +93,44 @@ function githubAPICall (userName, response) {
 
 
 }
-              //end function
-// }
+
 
 function generateMD(res, response) {
   const usersInfo = `
   <img src="${res.data.avatar_url}">
   
-        # ${response.project}
+  # ${response.project}
   
-        ## Description
-        ${response.description}
-        ## Table of Contents
-        ${response.table}
-        ## Installation
-        ${response.installation}
+  ## Description
+  ${response.description}
+
+  ## Table of Contents
+  ${response.table}
+
+  ## Installation
+  ${response.installation}
   
-        ## Technology Stack
-        ${response.technology}
-        ## Usage
-        ${response.usage}
+  ## Technology Stack
+  ${response.technology}
+
+  ## Usage
+  ${response.usage}
   
-        ## Contributors
-        ${response.contributors}
+  ## Contributors
+  ${response.contributors}
   
-        ## Contact
-        * #### Name: ${res.data.name}
-        * #### Github [${response.username}](${res.data.html_url})
-        * #### Portfolio: [link to portfolio](${response.portfolio})
-        * #### Email: []()
-        * #### LinkedIn: www.linkedin.com/in/${response.linkedin}
+  ## Contact
+  * #### Name: ${res.data.name}
+  * #### Github [${response.username}](${res.data.html_url})
+  * #### Portfolio: [link to portfolio](${response.portfolio})
+  * #### Email: []()
+  * #### LinkedIn: www.linkedin.com/in/${response.linkedin}
   
-        ## License
-        ${response.license}
-        ## Tests
-        ${response.tests}
-      `
+  ## License
+  ${response.license}
+  ## Tests
+  ${response.tests}
+  `
     fs.writeFile("README.md", usersInfo, function (err) {
 
       if (err) {
