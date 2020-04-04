@@ -78,7 +78,6 @@ function githubAPICall (userName, response) {
         
           generateMD(res, response);
 
-          // generateMD(response, res);
       }).catch(err => console.log(err));
 
 
@@ -87,7 +86,7 @@ function githubAPICall (userName, response) {
 
 function generateMD(res, response) {
   const usersInfo = `
-  <img src="${res.data.avatar_url}" alt="profile photo" style="width:250px;height:250px;float:right;">
+  <img src="${res.data.avatar_url}" alt="profile photo" style="width:250px;height:250px;">
   
   # ${response.project}
   
@@ -95,7 +94,6 @@ function generateMD(res, response) {
   ${response.description}
 
   ## Table of Contents
-  ${response.table}
 
   ## Installation
   ${response.installation}
@@ -111,8 +109,8 @@ function generateMD(res, response) {
   
   ## Contact
   * #### Name: ${res.data.name}
-  * #### Github [${response.username}](${res.data.html_url})
-  * #### Portfolio: [link to portfolio](${response.portfolio})
+  * #### Github: @[${response.username}](${res.data.html_url})
+  * #### Portfolio: [${response.portfolio}](${response.portfolio})
   * #### Email: [${res.data.email}](${res.data.email})
   * #### LinkedIn: www.linkedin.com/in/${response.linkedin}
   
