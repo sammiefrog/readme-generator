@@ -1,7 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const axios = require('axios');
-// const dotEnv = require('dotEnv');
 require('dotenv').config();
 
 function inquireQuestions () {
@@ -9,18 +8,8 @@ function inquireQuestions () {
   .prompt([
     {
       type: "input",
-      message: "What is your name?",
-      name: "name"
-    },
-    {
-      type: "input",
       message: "What is your Github Username?",
       name: "username"
-    },
-    {
-      type: "password",
-      message: "What is your GitHub password?",
-      name: "password"
     },
     {
       type: "input",
@@ -45,7 +34,7 @@ function inquireQuestions () {
     {
       type: "checkbox",
       message: "What technologies did you use?",
-      choices: ["Node.Js", "Express", "JavaScript", "jQuery", "React.js", "React", "GIT", "GitHub", "MongoDB", "MySQL", "Firebase", "Handlebars", "HTML", "CSS", "Bootstrap", "Media Queries", "APIs", "Microsoft Suite", "Heroku", "Command- Line"],
+      choices: [" Node.Js", " Express", " JavaScript", " jQuery", " React.js", " React", " GIT", " GitHub", " MongoDB", " MySQL", " Firebase", " Handlebars", " HTML", " CSS", " Bootstrap", " Media Queries", " APIs", " Microsoft Suite", " Heroku", " Command- Line"],
       name: "technology"
     },
     {
@@ -81,9 +70,10 @@ function githubAPICall (userName, response) {
 
   axios
       .get(queryURL, {
-        headers: {'Authorization': `token ${process.env.GH_TOKEN}`} 
+        headers: {'Authorization': `token ${process.env.GH_TOKEN2}`}
       })
       .then(function (res) {
+
           console.log(res.data);
         
           generateMD(res, response);

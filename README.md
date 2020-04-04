@@ -1,32 +1,32 @@
 
-  <img src="https://avatars0.githubusercontent.com/u/59233248?v=4">
+  <img src="https://avatars0.githubusercontent.com/u/59233248?v=4" alt="profile photo" style="width:250px;height:250px;float:right;">
   
-  # Hot Dad Finder
+  # sassafrasssssss
   
   ## Description
-  It helps you find hot dads
+  lalala poop poop heyyy
 
   ## Table of Contents
   undefined
 
   ## Installation
-  download it
+  install it
   
   ## Technology Stack
-  Node.Js,Express,JavaScript
+   Node.Js, Express, JavaScript, jQuery
 
   ## Usage
   undefined
   
   ## Contributors
-  me
+  @sammiefrog
   
   ## Contact
   * #### Name: Sammantha Sasenick
   * #### Github [sammiefrog](https://github.com/sammiefrog)
-  * #### Portfolio: [link to portfolio]()
-  * #### Email: []()
-  * #### LinkedIn: www.linkedin.com/in/
+  * #### Portfolio: [link to portfolio](sammiefrog.github.io/)
+  * #### Email: [ssasenick412@gmail.com](ssasenick412@gmail.com)
+  * #### LinkedIn: www.linkedin.com/in/sammantha-sasenick412
   
   ## License
   MIT
