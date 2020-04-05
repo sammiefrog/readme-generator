@@ -70,7 +70,7 @@ function githubAPICall (userName, response) {
 
   axios
       .get(queryURL, {
-        headers: {'Authorization': `token ${process.env.GH_TOKEN2}`}
+        headers: {'Authorization': `token ${process.env.GH_TOKEN}`}
       })
       .then(function (res) {
 
@@ -80,13 +80,12 @@ function githubAPICall (userName, response) {
 
       }).catch(err => console.log(err));
 
-
 }
 
 
 function generateMD(res, response) {
   const usersInfo = `
-  <img src="${res.data.avatar_url}" alt="profile photo" style="width:250px;height:250px;">
+  <img src="${res.data.avatar_url}" alt="profile photo" style="width: 250px; height: 250px;">
   
   # ${response.project}
   
