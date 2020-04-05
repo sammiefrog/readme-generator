@@ -90,15 +90,21 @@ function githubAPICall (userName, response) {
 
 function generateMD(res, response) {
   const usersInfo = `
-  <img src="${res.data.avatar_url}" alt="profile photo" style="width: 250px; height: 250px;">
-  
-  # ${response.project}
+  <img align="right" width="100" height="100" src="${res.data.avatar_url}">
 
+  # ${response.project}
 
   ## Contributors
   ${response.contributors}
   
   ## Table of Contents
+  <li><a href="#description">Description</a></li>  
+  <li><a href="#installation">Installation</a></li> 
+  <li><a href="#tech">Technology Stack</a></li> 
+  <li><a href="#usage">Usage</a></li> 
+  <li><a href="#contact">Contact</a></li> 
+  <li><a href="#license">License</a></li> 
+  <li><a href="#tests">Tests</a></li> 
 
   <h2 id= "description">Description</h2>
   ${response.description}
@@ -106,23 +112,23 @@ function generateMD(res, response) {
   <h2 id= "installation">Installation</h2>
   ${response.installation}
   
-  ## Technology Stack
+  <h2 id= "technology">Technology Stack</h2>
   ${response.technology}
 
-  ## Usage
+  <h2 id= "usage">Usage</h2>
   ${response.usage}
-  
 
-  ## Contact
+  <h2 id= "contact">Contact</h2>
   * #### Name: ${res.data.name}
   * #### Github: @[${response.username}](${res.data.html_url})
   * #### Portfolio: [${response.portfolio}](${response.portfolio})
   * #### Email: [${res.data.email}](${res.data.email})
   * #### LinkedIn: www.linkedin.com/in/${response.linkedin}
   
-  ## License
+  <h2 id= "license">License</h2>
   ${response.license}
-  ## Tests
+
+  <h2 id= "tests">Tests</h2>
   ${response.tests}
   `
     fs.writeFile("README.md", usersInfo, function (err) {
@@ -130,11 +136,9 @@ function generateMD(res, response) {
       if (err) {
           return console.log(err);
       }
-
       console.log("Success!");
 
     });
 }
 
-// githubAPICall();
 inquireQuestions();
