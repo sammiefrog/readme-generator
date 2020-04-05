@@ -38,6 +38,11 @@ function inquireQuestions () {
       name: "technology"
     },
     {
+      type: "input",
+      message: "Please enter Usage:",
+      name: "usage"
+    },
+    {
       type: "list",
       message: "What license do you want to use?",
       choices: ['MIT', 'ISC', 'Apache', 'GPL', 'BSD'],
@@ -88,13 +93,17 @@ function generateMD(res, response) {
   <img src="${res.data.avatar_url}" alt="profile photo" style="width: 250px; height: 250px;">
   
   # ${response.project}
-  
-  ## Description
-  ${response.description}
 
+
+  ## Contributors
+  ${response.contributors}
+  
   ## Table of Contents
 
-  ## Installation
+  <h2 id= "description">Description</h2>
+  ${response.description}
+
+  <h2 id= "installation">Installation</h2>
   ${response.installation}
   
   ## Technology Stack
@@ -103,9 +112,7 @@ function generateMD(res, response) {
   ## Usage
   ${response.usage}
   
-  ## Contributors
-  ${response.contributors}
-  
+
   ## Contact
   * #### Name: ${res.data.name}
   * #### Github: @[${response.username}](${res.data.html_url})
