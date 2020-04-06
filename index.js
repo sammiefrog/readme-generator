@@ -50,6 +50,11 @@ function inquireQuestions () {
     },
     {
       type: "input",
+      message: "Enter any tests:",
+      name: "tests"
+    },
+    {
+      type: "input",
       message: "What is you linked-in username?",
       name: "linkedin"
     },
@@ -90,9 +95,10 @@ function githubAPICall (userName, response) {
 
 function generateMD(res, response) {
   const usersInfo = `
-  <img align="right" width="100" height="100" src="${res.data.avatar_url}">
 
   # ${response.project}
+
+  <img align="right" width="100" height="100" src="${res.data.avatar_url}">
 
   ## Contributors
   ${response.contributors}
