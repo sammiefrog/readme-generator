@@ -1,6 +1,6 @@
-const fs = require('fs');
 const inquirer = require('inquirer');
-const axios = require('axios');
+const apiCall = require('./api');
+// const genMD = require('./generateMD');
 require('dotenv').config();
 
 function inquireQuestions () {
@@ -68,83 +68,12 @@ function inquireQuestions () {
 
     let userName = response.username;
 
-    githubAPICall(userName, response);
+    apiCall.githubAPICall(userName, response);
  
   });
   //end function
 }
 
-function githubAPICall (userName, response) {
-
-  const queryURL = `https://api.github.com/users/` + userName;
-
-  axios
-      .get(queryURL, {
-        headers: {'Authorization': `token ${process.env.GH_TOKEN}`}
-      })
-      .then(function (res) {
-
-          console.log(res.data);
-        
-          generateMD(res, response);
-
-      }).catch(err => console.log(err));
-
-}
-
-
-function generateMD(res, response) {
-  const usersInfo = `
-
-  # ${response.project}
-
-  <img align="right" width="100" height="100" src="${res.data.avatar_url}">
-
-  ## Contributors
-  ${response.contributors}
-  
-  ## Table of Contents
-  <li><a href="#description">Description</a></li>  
-  <li><a href="#installation">Installation</a></li> 
-  <li><a href="#tech">Technology Stack</a></li> 
-  <li><a href="#usage">Usage</a></li> 
-  <li><a href="#contact">Contact</a></li> 
-  <li><a href="#license">License</a></li> 
-  <li><a href="#tests">Tests</a></li> 
-
-  <h2 id= "description">Description</h2>
-  ${response.description}
-
-  <h2 id= "installation">Installation</h2>
-  ${response.installation}
-  
-  <h2 id= "technology">Technology Stack</h2>
-  ${response.technology}
-
-  <h2 id= "usage">Usage</h2>
-  ${response.usage}
-
-  <h2 id= "contact">Contact</h2>
-  <li>#### Name: ${res.data.name}</li> 
-  <li>#### Github: @[${response.username}](${res.data.html_url})</li> 
-  <li>#### Portfolio: [${response.portfolio}](${response.portfolio})</li> #### Portfolio: [${response.portfolio}](${response.portfolio})
-  <li>#### Email: [${res.data.email}](${res.data.email})</li> 
-  <li>#### LinkedIn: www.linkedin.com/in/${response.linkedin}</li> 
-  
-  <h2 id= "license">License</h2>
-  ${response.license}
-
-  <h2 id= "tests">Tests</h2>
-  ${response.tests}
-  `
-    fs.writeFile("README.md", usersInfo, function (err) {
-
-      if (err) {
-          return console.log(err);
-      }
-      console.log("Success!");
-
-    });
-}
-
 inquireQuestions();
+
+// module.exports = inquireQuestions();
