@@ -125,11 +125,11 @@ function generateMD(res, response) {
   ${response.usage}
 
   <h2 id= "contact">Contact</h2>
-  * #### Name: ${res.data.name}
-  * #### Github: @[${response.username}](${res.data.html_url})
-  * #### Portfolio: [${response.portfolio}](${response.portfolio})
-  * #### Email: [${res.data.email}](${res.data.email})
-  * #### LinkedIn: www.linkedin.com/in/${response.linkedin}
+  <li>#### Name: ${res.data.name}</li> 
+  <li>#### Github: @[${response.username}](${res.data.html_url})</li> 
+  <li>#### Portfolio: [${response.portfolio}](${response.portfolio})</li> #### Portfolio: [${response.portfolio}](${response.portfolio})
+  <li>#### Email: [${res.data.email}](${res.data.email})</li> 
+  <li>#### LinkedIn: www.linkedin.com/in/${response.linkedin}</li> 
   
   <h2 id= "license">License</h2>
   ${response.license}
