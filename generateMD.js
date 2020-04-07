@@ -1,9 +1,4 @@
 const fs = require('fs');
-const apiCall = require('./api');
-// const index = require('./index');
-console.log(apiCall);
-// index();
-// apiCall();
 
 const generate = { generateMD(res, response) {
     const usersInfo = `
@@ -37,11 +32,11 @@ const generate = { generateMD(res, response) {
     ${response.usage}
   
     <h2 id= "contact">Contact</h2>
-    <li>#### Name: ${res.data.name}</li> 
-    <li>#### Github: @[${response.username}](${res.data.html_url})</li> 
-    <li>#### Portfolio: [${response.portfolio}](${response.portfolio})</li> #### Portfolio: [${response.portfolio}](${response.portfolio})
-    <li>#### Email: [${res.data.email}](${res.data.email})</li> 
-    <li>#### LinkedIn: www.linkedin.com/in/${response.linkedin}</li> 
+    <li>Name: ${res.data.name}</li> 
+    <li>Github: @[${response.username}](${res.data.html_url})</li> 
+    <li>Portfolio: [${response.portfolio}](${response.portfolio})</li> #### Portfolio: [${response.portfolio}](${response.portfolio})
+    <li>Email: [${res.data.email}](${res.data.email})</li> 
+    <li>LinkedIn: www.linkedin.com/in/${response.linkedin}</li> 
     
     <h2 id= "license">License</h2>
     ${response.license}
@@ -60,4 +55,4 @@ const generate = { generateMD(res, response) {
   }
 }
 
-  module.exports = generate;
+module.exports = generate;

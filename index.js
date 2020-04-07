@@ -3,6 +3,17 @@ const apiCall = require('./api');
 // const genMD = require('./generateMD');
 require('dotenv').config();
 
+function writeFile(usersInfo) {
+  fs.writeFile("README.md", usersInfo, function (err) {
+  
+    if (err) {
+        return console.log(err);
+    }
+    console.log("Success!");
+
+  });
+}
+
 function inquireQuestions () {
   inquirer
   .prompt([
