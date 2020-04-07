@@ -39,7 +39,7 @@ ${response.usage}
     
 <h2 id= "tests">Tests</h2>
 ${response.tests} `
-      fs.writeFile("README.md", usersInfo, function (err) {
+      fs.writeFile("gen-README.md", usersInfo, function (err) {
   
         if (err) {
             return console.log(err);
