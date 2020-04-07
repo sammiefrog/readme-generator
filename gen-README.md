@@ -1,6 +1,6 @@
 # This is a Test Project
 <img align="left" src="https://img.shields.io/badge/License-MIT-green">
-<img align="right" width="100" height="100" src="https://avatars0.githubusercontent.com/u/59233248?v=4">
+<img align="right" width="100" height="100" src="https://avatars0.githubusercontent.com/u/59233248?v=4"><hr>
   
 ## Contributors
 @sammiefrog @jeverett93 @chaalexander @git-theresa
@@ -29,12 +29,9 @@ Generating readme's quickly.
 <h2 id= "contact">Contact</h2>
 <li>Name: Sammantha Sasenick</li> 
 <li>Github: @[sammiefrog](https://github.com/sammiefrog)</li> 
-<li>Portfolio: [sammiefrog.github.io](sammiefrog.github.io)</li> #### Portfolio: [sammiefrog.github.io](sammiefrog.github.io)
+<li>Portfolio: [sammiefrog.github.io](sammiefrog.github.io)</li>
 <li>Email: [ssasenick412@gmail.com](ssasenick412@gmail.com)</li> 
 <li>LinkedIn: www.linkedin.com/in/sammantha-sasenick412</li> 
     
-<h2 id= "license">License</h2>
-MIT
-  
 <h2 id= "tests">Tests</h2>
-testing, testing... 
+Testing, testing... 

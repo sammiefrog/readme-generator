@@ -33,16 +33,13 @@ ${response.usage}
 <h2 id= "contact">Contact</h2>
 <li>Name: ${res.data.name}</li> 
 <li>Github: @[${response.username}](${res.data.html_url})</li> 
-<li>Portfolio: [${response.portfolio}](${response.portfolio})</li> #### Portfolio: [${response.portfolio}](${response.portfolio})
+<li>Portfolio: [${response.portfolio}](${response.portfolio})</li>
 <li>Email: [${res.data.email}](${res.data.email})</li> 
 <li>LinkedIn: www.linkedin.com/in/${response.linkedin}</li> 
     
-<h2 id= "license">License</h2>
-${response.license}
-  
 <h2 id= "tests">Tests</h2>
 ${response.tests} `
-      fs.writeFile("gen-README.md", usersInfo, function (err) {
+      fs.writeFile("README.md", usersInfo, function (err) {
   
         if (err) {
             return console.log(err);
