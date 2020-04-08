@@ -34,7 +34,7 @@ ${response.usage}
 <li>Name: ${res.data.name}</li> 
 <li>Github: ${res.data.html_url}</li> 
 <li>Portfolio: ${response.portfolio}</li>
-<li>Email: <a href="mailto:${res.data.email}" target="_blank"></li> 
+<li>Email: <a href="mailto:${res.data.email}" target="_blank">${res.data.email}</a></li> 
 <li>LinkedIn: www.linkedin.com/in/${response.linkedin}</li> 
     
 <h2 id= "tests">Tests</h2>
