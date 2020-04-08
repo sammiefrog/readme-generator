@@ -28,9 +28,9 @@ Generating readme's quickly.
   
 <h2 id= "contact">Contact</h2>
 <li>Name: Sammantha Sasenick</li> 
-<li>Github: @[sammiefrog](https://github.com/sammiefrog)</li> 
-<li>Portfolio: [sammiefrog.github.io](sammiefrog.github.io)</li>
-<li>Email: [ssasenick412@gmail.com](ssasenick412@gmail.com)</li> 
+<li>Github: https://github.com/sammiefrog</li> 
+<li>Portfolio: sammiefrog.github.io</li>
+<li>Email: <a href="mailto:ssasenick412@gmail.com" target="_blank"></li> 
 <li>LinkedIn: www.linkedin.com/in/sammantha-sasenick412</li> 
     
 <h2 id= "tests">Tests</h2>

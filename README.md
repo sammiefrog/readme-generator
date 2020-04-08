@@ -22,7 +22,7 @@ This is a project built with Javascript and Node.js that generates a README.md f
 <li>Fork this repository and clone to your machine  </li> 
 <li>'npm install' will install the required packages from the JSON file</li> 
 <li>Obtain a personal access token from GitHub  </li> 
-<li>Put said token in a dotenv files after GITHUB_TOKEN= and watch it work!</li> 
+<li>Put said token in a dotenv file after GITHUB_TOKEN= and watch it work!</li> 
     
 <h2 id= "technology">Technology Stack</h2>
  Node.Js, JavaScript, GIT
@@ -41,9 +41,9 @@ To generate a basic README.md quickly and easily.
   
 <h2 id= "contact">Contact</h2>
 <li>Name: Sammantha Sasenick</li> 
-<li>Github: @[sammiefrog](https://github.com/sammiefrog)</li> 
-<li>Portfolio: [sammiefrog.github.io](sammiefrog.github.io)</li>
-<li>Email: [ssasenick412@gmail.com](ssasenick412@gmail.com)</li> 
+<li>Github: https://github.com/sammiefrog </li> 
+<li>Portfolio: https://sammiefrog.github.io </li>
+<li>Email: <a href="mailto:ssasenick412@gmail.com" target="_blank"></li> 
 <li>LinkedIn: www.linkedin.com/in/sammantha-sasenick412</li> 
     
 <h2 id= "tests">Tests</h2>
