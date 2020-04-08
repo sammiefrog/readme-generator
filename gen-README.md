@@ -1,6 +1,6 @@
 # This is a Test Project
-<img align="left" src="https://img.shields.io/badge/License-MIT-green">
-<img align="right" width="100" height="100" src="https://avatars0.githubusercontent.com/u/59233248?v=4"><hr>
+<img align="left" src="https://img.shields.io/badge/License-MIT-green" alt="license">
+<img align="right" width="100" height="100" src="https://avatars0.githubusercontent.com/u/59233248?v=4" alt="Github profile picture"><hr>
   
 ## Contributors
 @sammiefrog @jeverett93 @chaalexander @git-theresa

@@ -1,6 +1,6 @@
 # README Generator
-<img align="left" src="https://img.shields.io/badge/License-MIT-green">
-<img align="right" width="100" height="100" src="https://avatars0.githubusercontent.com/u/59233248?v=4"><hr>
+<img align="left" src="https://img.shields.io/badge/License-MIT-green" alt="license">
+<img align="right" width="100" height="100" src="https://avatars0.githubusercontent.com/u/59233248?v=4" alt="Github profile picture"><hr>
   
 ## Contributors
 @sammiefrog
@@ -31,13 +31,13 @@ This is a project built with Javascript and Node.js that generates a README.md f
 To generate a basic README.md quickly and easily.
 
 <h2 id= "screenshots">Screenshots</h2>
-<img src="images/project-test-1.png">
-<img src="images/project-test-2.png">
-<img src="images/project-test-3.png">
-<img src="images/project-test-4.png">
-<img src="images/project-test-5.png">
-<img src="images/project-test-6.png">
-<img src="images/project-test-7.png">
+<img src="images/project-test-1.png" alt="screenshot of app">
+<img src="images/project-test-2.png" alt="screenshot of app">
+<img src="images/project-test-3.png" alt="screenshot of app">
+<img src="images/project-test-4.png" alt="screenshot of app">
+<img src="images/project-test-5.png" alt="screenshot of app">
+<img src="images/project-test-6.png" alt="screenshot of app">
+<img src="images/project-test-7.png" alt="screenshot of app">
   
 <h2 id= "contact">Contact</h2>
 <li>Name: Sammantha Sasenick</li> 
@@ -47,4 +47,4 @@ To generate a basic README.md quickly and easily.
 <li>LinkedIn: www.linkedin.com/in/sammantha-sasenick412</li> 
     
 <h2 id= "tests">Tests</h2>
-<img src="images/test-app.gif">
+<img src="images/test-app.gif" alt="gif of working app">

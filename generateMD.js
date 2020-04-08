@@ -3,8 +3,8 @@ const fs = require('fs');
 const generate = { generateMD(res, response) {
 
     const usersInfo = `# ${response.project}
-<img align="left" src="https://img.shields.io/badge/License-${response.license}-green">
-<img align="right" width="100" height="100" src="${res.data.avatar_url}">
+<img align="left" src="https://img.shields.io/badge/License-${response.license}-green" alt="license">
+<img align="right" width="100" height="100" src="${res.data.avatar_url}" alt="Github Profile Image">
   
 ## Contributors
 ${response.contributors}
